@@ -1,0 +1,23 @@
+{
+  "name": "srv",
+  "version": "1.0.0",
+  "description": "/etc/rc.local -> iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DriveINN/srv.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DriveINN/srv/issues"
+  },
+  "homepage": "https://github.com/DriveINN/srv#readme",
+  "dependencies": {
+    "koa": "^1.2.4",
+    "koa-static": "^2.0.0"
+  }
+}
