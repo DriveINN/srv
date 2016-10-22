@@ -20,6 +20,9 @@ module.exports = function(sequelize, DataTypes) {
         },
         fuel: {
             type: DataTypes.STRING
+        },
+        number: {
+            type: DataTypes.STRING
         }
     }, {
         classMethods: {

@@ -3,5 +3,9 @@
         "require": "../data/users.json",
         "name": "users",
         "sync": false
+    }, {
+        "require": "../data/cars.json",
+        "name": "cars",
+        "sync": false
     }
 ]
