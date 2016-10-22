@@ -109,7 +109,9 @@ module.exports.registerComplete = function * ()
     var body = yield parse(this);
     var sessionId = body['sessionId'];
     var verificationCode = body['verificationCode'];
-    if (!sessionId || !verificationCode)
+    var pin = body['pin'];
+    var phone = body['phone'];
+    if (!sessionId || !verificationCode || !pin || !phone)
     {
         this.status = 400;
         return;
@@ -121,6 +123,29 @@ module.exports.registerComplete = function * ()
             sessionId: sessionId,
             verificationCode: verificationCode
         });
+        result = yield rb.query('authenticate', {
+            username: phone,
+            password: 'driveinn',
+            passwordType: 'STRING',
+            imei: '354190023896443',
+            uniqueDeviceId: 'driveinn_app_' + phone,
+            timeZone: '+3',
+            appVersion: '0.1',
+            osType: 'iOS',
+            osVersion: '9.2',
+            deviceModel: 'driveinn'
+        });
+        result = yield rb.query('changePassword', {
+            sessionId: result.sessionId,
+            passwordType: 'PIN',
+            password: undefined,
+            newPasswordType: 'PIN',
+            newPassword: pin,
+            isMobile: true
+        });
+        result = {
+            errorCode: 0,
+        }
     }
     catch(e)
     {
@@ -133,11 +158,9 @@ module.exports.registerComplete = function * ()
 module.exports.authenticate = function * ()
 {
     var body = yield parse(this);
-    var username = body['username'];
-    var password = body['password'];
-    var passwordType = body['passwordType'];
-    var imei = body['imei'];
-    if (!username || !password || !passwordType || !imei)
+    var username = body['phone'];
+    var pin = body['pin'];
+    if (!username || !pin)
     {
         this.status = 400;
         return;
@@ -147,9 +170,9 @@ module.exports.authenticate = function * ()
     {
         var result = yield rb.query('authenticate', {
             username: username,
-            password: password,
-            passwordType: passwordType,
-            imei: imei,
+            password: pin,
+            passwordType: 'PIN',
+            imei: '354190023896443',
             uniqueDeviceId: 'driveinn_app_' + username,
             timeZone: '+3',
             appVersion: '0.1',
