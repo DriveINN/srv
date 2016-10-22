@@ -142,6 +142,9 @@ module.exports.registerComplete = function * ()
             {
                 expiresIn: cfg.token.expires
             });
+        var user = yield createOrFindUser(phone);
+        prepareOutput(user);
+        result.user = user;
     }
     catch(e)
     {
@@ -188,6 +191,9 @@ module.exports.authenticate = function * ()
                     expiresIn: cfg.token.expires
                 }
             );
+            var user = yield createOrFindUser(username);
+            prepareOutput(user);
+            result.user = user;
         }
     }
     catch(e)
