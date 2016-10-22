@@ -82,8 +82,7 @@ module.exports.register = function * ()
 };
 module.exports.check = function * ()
 {
-    var body = yield parse(this);
-    var phone = body['phone'];
+    var phone = this.query['phone'];
     if (phone == undefined)
     {
         this.status = 400;

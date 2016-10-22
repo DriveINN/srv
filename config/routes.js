@@ -19,7 +19,7 @@ module.exports = {
                 postfix: '/users/register',
                 method: controllers.users.register
             }, {
-                type: 'post',
+                type: 'get',
                 postfix: '/users/check',
                 method: controllers.users.check
             }, {
