@@ -15,9 +15,9 @@ module.exports = function(sequelize, DataTypes) {
                     foreignKey: 'uguid',
                     as: 'users'
                 });
-                transactions.belongsTo(models.gasStations, {
-                    foreignKey: 'gsguid',
-                    as: 'gasStations'
+                transactions.belongsTo(models.stations, {
+                    foreignKey: 'sguid',
+                    as: 'stations'
                 });
             }
         }

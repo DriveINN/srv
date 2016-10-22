@@ -1,9 +1,9 @@
 
 module.exports = function(sequelize, DataTypes) {
-    var gasStations = sequelize.define("gasStations", {
+    var stations = sequelize.define("stations", {
         guid: {
             type: DataTypes.STRING,
-            field: 'gsguid',
+            field: 'sguid',
             primaryKey: true
         },
         longitude: DataTypes.STRING(10),
@@ -11,13 +11,13 @@ module.exports = function(sequelize, DataTypes) {
     }, {
         classMethods: {
             associate: function (models) {
-                gasStations.hasMany(models.transactions, {
-                    foreignKey: 'gsguid',
-                    as: 'gasStations'
+                stations.hasMany(models.transactions, {
+                    foreignKey: 'sguid',
+                    as: 'stations'
                 });
 
             }
         }
     });
-    return gasStations;
+    return stations;
 };

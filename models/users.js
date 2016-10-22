@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     var users = sequelize.define("users", {
         guid:  {
             type: DataTypes.STRING,
-            field: 'u_guid',
+            field: 'uguid',
             primaryKey: true
         },
         login: {

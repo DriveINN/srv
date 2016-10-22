@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         uguid: {
             type: DataTypes.STRING,
-            field: 'u_guid'
+            field: 'uguid'
         },
         mark: {
             type: DataTypes.STRING
