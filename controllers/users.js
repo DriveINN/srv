@@ -39,7 +39,8 @@ var createOrFindUser = function * (phone) {
         return user;
     return yield models.users.create({
         guid: common.generateGuid(),
-        login: phone
+        login: phone,
+        groups: ['confirmed']
     });
 };
 
