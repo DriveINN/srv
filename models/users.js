@@ -61,6 +61,10 @@ module.exports = function(sequelize, DataTypes) {
                     foreignKey: 'uguid',
                     as: 'users'
                 });
+                users.hasMany(models.transactions, {
+                    foreignKey: 'uguid',
+                    as: 'users'
+                });
             }
         }
     });
