@@ -36,6 +36,14 @@ module.exports = function(sequelize, DataTypes) {
             generateSalt: function () {
                 return crypto.randomBytes(64).toString('hex');
             }
+        },
+        classMethods: {
+            associate: function (models) {
+                users.hasMany(models.cars, {
+                    foreignKey: 'uguid',
+                    as: 'users'
+                });
+            }
         }
     });
     return users;
