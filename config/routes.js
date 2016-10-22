@@ -60,6 +60,15 @@ module.exports = {
     },
     locked: {
         v01: [],
-        actual: []
+        actual: [
+            {
+                type: 'get',
+                postfix: '/cars/my',
+                method: controllers.cars.listCars4User,
+                accessGroups: [
+                    'admin', 'confirmed'
+                ]
+            }
+        ]
     }
 }
