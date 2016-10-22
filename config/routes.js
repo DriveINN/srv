@@ -68,6 +68,13 @@ module.exports = {
                 accessGroups: [
                     'admin', 'confirmed'
                 ]
+            }, {
+                type: 'post',
+                postfix: '/cars/',
+                method: controllers.cars.add,
+                accessGroups: [
+                    'admin', 'confirmed'
+                ]
             }
         ]
     }
