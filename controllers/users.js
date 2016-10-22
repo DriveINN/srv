@@ -99,9 +99,10 @@ module.exports.check = function * ()
     {
         result = e;
     }
-    console.log(result);
     this.status = 200;
-    this.body = result;
+    this.body = {
+        status: result.errorCode === 0
+    };
 };
 module.exports.registerComplete = function * ()
 {

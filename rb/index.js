@@ -50,7 +50,7 @@ exports.query = function (method, params)
 var APIError = exports.APIError = function(jsonError)
 {
     this.message = jsonError.errorMessage;
-    this.code = jsonError.errorCode;
-    this.cause = jsonError.errorCause;
+    this.errorCode = jsonError.errorCode;
+    this.errorCause = jsonError.errorCause;
 };
 util.inherits(exports.APIError, Error);
