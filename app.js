@@ -11,7 +11,10 @@ var koa = require('koa'),
     app = module.exports = koa();
 
 app.use(serveStatic(__dirname + '/../web/'));
-
+app.use(function * (next) {
+    this.set('Access-Control-Allow-Origin',  '*');
+    yield next;
+});
 router.createRoutes(app, 'free');
 
 app.use(jwt({ secret: cfg.token.secret }));
