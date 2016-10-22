@@ -9,11 +9,7 @@ function * getUserFromHeader (query, includeUserData) {
     return user = userLogin ? yield models.users.findOne({
         where: {
             login: userLogin
-        },
-        include: includeUserData ? [{
-            model: models.usersdata,
-            as: 'usersdata'
-        }] : []
+        }
     }) : null;
 }
 
