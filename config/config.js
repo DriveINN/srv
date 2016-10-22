@@ -11,6 +11,11 @@ var cfg = {
     token: {
         secret: 'N5g9clpxuATS7Sts7ketnZ3FeicFkj',
         expires: 2* 24 * 60 * 60
+    },
+    rb: {
+        baseUrl: 'https://openfightsgate.open.ru/boplatform-deploy/',
+        version: '3.4',
+        partner: 'RavINN'
     }
 };
 
