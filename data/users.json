@@ -1,0 +1,7 @@
+[{
+    "guid": "72d9bf32-f314-1f31-0fee-f4d98f9f73ae",
+    "login": "admin",
+    "groups": ["admin"],
+    "pwdsalt": "1d3be76f08691e481a6655d6821fb76965a0e87d78e36ef138ec856a567a984ed3d26b8cad026d1e3e8b92ff663da90efd46f3103fba1ebfdd5e6491f932206e",
+    "pwdhash": "4611c7896bfa559382f6b06b1ce41c9239ee4d91"
+}]

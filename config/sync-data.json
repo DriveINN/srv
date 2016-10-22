@@ -1,0 +1,7 @@
+[
+    {
+        "require": "../data/users.json",
+        "name": "users",
+        "sync": false
+    }
+]
