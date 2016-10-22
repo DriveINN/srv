@@ -42,7 +42,7 @@ module.exports = {
 
 
             {
-                type: 'post',
+                type: 'get',
                 postfix: '/cards/getBindings',
                 method: controllers.cards.getBindings
             },
@@ -52,7 +52,7 @@ module.exports = {
                 method: controllers.cards.createVerifyPayment
             },
             {
-                type: 'post',
+                type: 'get',
                 postfix: '/cards/getPaymentResult',
                 method: controllers.cards.getPaymentResult
             }

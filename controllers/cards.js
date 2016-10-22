@@ -3,8 +3,8 @@ var parse = require('co-body'),
     rb = require('../rb');
 
 exports.getBindings = function * () {
-    var body = yield parse(this);
-    var sessionId = body['sessionId'];
+
+    var sessionId = this.query['sessionId'];
     if (!sessionId)
     {
         this.status = 400;
@@ -59,9 +59,8 @@ exports.createVerifyPayment = function * () {
     this.body = result;
 };
 exports.getPaymentResult = function * () {
-    var body = yield parse(this);
-    var sessionId = body['sessionId'];
-    var mdOrder = body['mdOrder'];
+    var sessionId = this.query['sessionId'];
+    var mdOrder = this.query['mdOrder'];
     if (!sessionId || !mdOrder)
     {
         this.status = 400;
