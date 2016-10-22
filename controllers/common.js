@@ -8,6 +8,6 @@ module.exports.generateGuid = function () {
         s4() + '-' + s4() + s4() + s4();
 };
 
-module.exports.options = function () {
+module.exports.options = function * () {
     this.set('Access-Control-Allow-Origin',  '*');
 };
