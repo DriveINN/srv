@@ -18,7 +18,25 @@ module.exports = function(sequelize, DataTypes) {
         groups: DataTypes.ARRAY(DataTypes.STRING),
         pwdhash: DataTypes.STRING(255),
         pwdsalt: DataTypes.STRING(255),
-        SMS: DataTypes.JSON
+        SMS: DataTypes.JSON,
+        f92: {
+            type: DataTypes.INTEGER
+        },
+        f95: {
+            type: DataTypes.INTEGER
+        },
+        f95U: {
+            type: DataTypes.INTEGER
+        },
+        f98: {
+            type: DataTypes.INTEGER
+        },
+        fd: {
+            type: DataTypes.INTEGER
+        },
+        bonus: {
+            type: DataTypes.INTEGER
+        }
     }, {
         instanceMethods: {
             encryptPassword: function(password, salt) {
