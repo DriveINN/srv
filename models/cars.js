@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
     var cars = sequelize.define("cars", {
         guid: {
             type: DataTypes.STRING,
-            field: 'c_guid',
+            field: 'cguid',
             primaryKey: true
         },
         uguid: {
