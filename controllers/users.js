@@ -109,9 +109,8 @@ module.exports.registerComplete = function * ()
     var body = yield parse(this);
     var sessionId = body['sessionId'];
     var verificationCode = body['verificationCode'];
-    var pin = body['pin'];
     var phone = body['phone'];
-    if (!sessionId || !verificationCode || !pin || !phone)
+    if (!sessionId || !verificationCode)
     {
         this.status = 400;
         return;
@@ -135,27 +134,14 @@ module.exports.registerComplete = function * ()
             osVersion: '9.2',
             deviceModel: 'driveinn'
         });
-        yield rb.query('changePassword', {
-            sessionId: result.sessionId,
-            passwordType: 'PIN',
-            password: undefined,
-            newPasswordType: 'PIN',
-            newPassword: pin,
-            isMobile: true
-        });
-        result = {
-            errorCode: 0,
-            sessionId: result.sessionId,
-            userId: result.userId,
-            token: jwt.sign(
-                {
-                    user: phone
-                },
-                cfg.token.secret,
-                {
-                    expiresIn: cfg.token.expires
-                })
-        }
+        result.token = jwt.sign(
+            {
+                user: phone
+            },
+            cfg.token.secret,
+            {
+                expiresIn: cfg.token.expires
+            });
     }
     catch(e)
     {
@@ -285,6 +271,46 @@ module.exports.changeUser = function * ()
     try
     {
         var result = yield rb.query('changeUser', {
+            sessionId: sessionId,
+            email: email,
+            firstName: firstName,
+            lastName: lastName
+        });
+    }
+    catch(e)
+    {
+        result = e;
+    }
+    console.log(result);
+    this.status = 200;
+    this.body = result;
+};
+
+module.exports.changeUserAndSetPin = function * ()
+{
+    var body = yield parse(this);
+    var sessionId = body['sessionId'];
+    var email = body['email'];
+    var firstName = body['firstName'];
+    var lastName = body['lastName'];
+    var pin = body['pin'];
+    if (!sessionId || !email || !firstName || !lastName)
+    {
+        this.status = 400;
+        return;
+    }
+
+    try
+    {
+        var result = yield rb.query('changePassword', {
+            sessionId: sessionId,
+            passwordType: 'PIN',
+            password: undefined,
+            newPasswordType: 'PIN',
+            newPassword: pin,
+            isMobile: true
+        });
+        result = yield rb.query('changeUser', {
             sessionId: sessionId,
             email: email,
             firstName: firstName,
