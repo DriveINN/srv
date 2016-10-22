@@ -7,9 +7,10 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true
         },
         name: DataTypes.STRING(250),
-        icon: DataTypes.STRING(100),
+        icon: DataTypes.TEXT,
         isFuel: DataTypes.BOOLEAN(),
-        maxAmmount: DataTypes.INTEGER()
+        maxAmmount: DataTypes.INTEGER(),
+        price: DataTypes.DECIMAL(10, 2)
     }, {
         classMethods: {
             associate: function (models) {
@@ -17,7 +18,6 @@ module.exports = function(sequelize, DataTypes) {
                     foreignKey: 'sguid',
                     as: 'stations'
                 });
-                goods.belongsToMany(models.transactions, {through: 'gt'});
             }
         }
     });

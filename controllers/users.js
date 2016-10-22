@@ -356,3 +356,15 @@ module.exports.renewUserSession = function * ()
     this.status = 200;
     this.body = result;
 };
+
+module.exports.getFuelCardHistory = function * (card) {
+
+    var user = yield getUserFromHeader(this),
+        transactions = yield models.transactions.findAll({
+            where: {
+                uguid: user.guid,
+                card: card
+            }
+        });
+    this.body = transactions;
+};

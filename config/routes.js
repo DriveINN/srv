@@ -93,6 +93,41 @@ module.exports = {
                     'admin', 'confirmed'
                 ]
             }, {
+                type: 'get',
+                postfix: '/transactions/my',
+                method: controllers.transactions.listTR4User,
+                accessGroups: [
+                    'admin', 'confirmed'
+                ]
+            }, {
+                type: 'get',
+                postfix: '/transactions/my/:card',
+                method: controllers.users.getFuelCardHistory,
+                accessGroups: [
+                    'admin', 'confirmed'
+                ]
+            }, {
+                type: 'get',
+                postfix: '/stations/:id',
+                method: controllers.stations.getStationById,
+                accessGroups: [
+                    'admin', 'confirmed'
+                ]
+            }, {
+                type: 'get',
+                postfix: '/stations/:id/goods',
+                method: controllers.stations.getStationGoods,
+                accessGroups: [
+                    'admin', 'confirmed'
+                ]
+            }, {
+                type: 'get',
+                postfix: '/stations/:id/fuel',
+                method: controllers.stations.getStationFuel,
+                accessGroups: [
+                    'admin', 'confirmed'
+                ]
+            }, {
                 type: 'options',
                 postfix: '/(.*)',
                 method: controllers.common.options

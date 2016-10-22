@@ -1,0 +1,49 @@
+[{
+  "guid": "51d8bf12-f214-1f53-0fee-f4d98f9f73a1",
+  "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
+  "name": "Чернение шин",
+  "icon": "http://",
+  "isFuel": false,
+  "maxAmmount": 1,
+  "price": 200
+}, {
+  "guid": "51d8bf12-f214-1f53-0fee-87687",
+  "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
+  "name": "Американо",
+  "icon": "http://",
+  "isFuel": false,
+  "maxAmmount": 0,
+  "price": 130
+}, {
+  "guid": "51d56712-f214-1f53-0fee-f4d98f9f73a1",
+  "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
+  "name": "Пончик",
+  "icon": "http://",
+  "isFuel": false,
+  "maxAmmount": 10,
+  "price": 60
+}, {
+  "guid": "51d854612-f214-1f53-0fee-f4d98f9f73a1",
+  "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
+  "name": "f95",
+  "icon": "http://",
+  "isFuel": true,
+  "maxAmmount": 1,
+  "price": 36
+}, {
+  "guid": "51234f12-f214-1f53-0fee-f4d98f9f73a1",
+  "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
+  "name": "f92",
+  "icon": "http://",
+  "isFuel": true,
+  "maxAmmount": 1,
+  "price": 34.4
+}, {
+  "guid": "5568bf12-f214-1f53-0fee-f4d98f9f73a1",
+  "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
+  "name": "diesel",
+  "icon": "http://",
+  "isFuel": true,
+  "maxAmmount": 1,
+  "price": 35.2
+}]

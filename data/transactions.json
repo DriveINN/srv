@@ -1,0 +1,62 @@
+[{
+  "guid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae",
+  "date": "2010-01-01",
+  "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
+  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae",
+  "card": "f95",
+  "goods": [{
+    "ammount": "35 литоров",
+    "description": "АИ-95"
+  }],
+  "total": -35
+}, {
+  "guid": "72d9bf12-f214-1f51-0fee-f4d98f9f74ae",
+  "date": "2010-01-01",
+  "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
+  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae",
+  "card": "creditcard",
+  "goods": [{
+    "ammount": "30 литорв",
+    "description": "АИ-95"
+  }, {
+    "ammount": "1 шт",
+    "description": "Кола 2л."
+  }],
+  "total": -1000,
+  "bouns": 12
+}, {
+  "guid": "72d9bf12-f214-1f51-0fee-f4d98f9f75ae",
+  "date": "2010-01-01",
+  "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
+  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae",
+  "card": "creditcard",
+  "goods": [{
+    "ammount": "25 литорв",
+    "description": "АИ-95"
+  }],
+  "total": -800,
+  "bouns": 8
+}, {
+  "guid": "72d9bf12-f214-1f51-0fee-f4d98f9f77ae",
+  "date": "2010-01-01",
+  "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
+  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae",
+  "card": "f95",
+  "goods": [{
+    "ammount": "600 литоров",
+    "description": "АИ-95"
+  }],
+  "total": 600
+}, {
+  "guid": "72d9bf12-f214-1f51-0fee-f4d98f9f79ae",
+  "date": "2010-01-01",
+  "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
+  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae",
+  "card": "creditcard",
+  "goods": [{
+    "ammount": "600 литоров",
+    "description": "АИ-95"
+  }],
+  "total": -18000,
+  "bonus": 180
+}]

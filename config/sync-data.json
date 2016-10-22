@@ -11,5 +11,13 @@
         "require": "../data/stations.json",
         "name": "stations",
         "sync": false
+    }, {
+        "require": "../data/transactions.json",
+        "name": "transactions",
+        "sync": false
+    }, {
+        "require": "../data/goods.json",
+        "name": "goods",
+        "sync": false
     }
 ]
