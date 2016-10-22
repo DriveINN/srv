@@ -331,3 +331,27 @@ module.exports.changeUserAndSetPin = function * ()
     this.status = 200;
     this.body = result;
 };
+module.exports.renewUserSession = function * ()
+{
+    var body = yield parse(this);
+    var sessionId = body['sessionId'];
+    if (!sessionId)
+    {
+        this.status = 400;
+        return;
+    }
+
+    try
+    {
+        var result = yield rb.query('renewUserSession', {
+            sessionId: sessionId
+        });
+    }
+    catch(e)
+    {
+        result = e;
+    }
+    console.log(result);
+    this.status = 200;
+    this.body = result;
+};
