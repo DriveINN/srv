@@ -26,6 +26,35 @@ module.exports = {
                 type: 'post',
                 postfix: '/users/register_complete',
                 method: controllers.users.registerComplete
+            }, {
+                type: 'post',
+                postfix: '/users/authenticate',
+                method: controllers.users.authenticate
+            }, {
+                type: 'post',
+                postfix: '/users/logout',
+                method: controllers.users.logout
+            }, {
+                type: 'post',
+                postfix: '/users/changePassword',
+                method: controllers.users.changePassword
+            },
+
+
+            {
+                type: 'post',
+                postfix: '/cards/getBindings',
+                method: controllers.cards.getBindings
+            },
+            {
+                type: 'post',
+                postfix: '/cards/createVerifyPayment',
+                method: controllers.cards.createVerifyPayment
+            },
+            {
+                type: 'post',
+                postfix: '/cards/getPaymentResult',
+                method: controllers.cards.getPaymentResult
             }
         ]
     },

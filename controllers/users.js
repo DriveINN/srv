@@ -67,10 +67,10 @@ module.exports.register = function * ()
             deviceModel: 'driveinn',
             timeZone: '-3',
             password: 'driveinn',
-            osType: 'Android',
+            osType: 'iOS',
             appVersion: '0.1',
             osVersion: '4.2',
-            uniqueDeviceId: 'driveinn_web' + phone
+            uniqueDeviceId: 'driveinn_app_' + phone
         });
 
         var user = yield createOrFindUser(phone);
@@ -123,6 +123,99 @@ module.exports.registerComplete = function * ()
         var result = yield rb.query('completeRegistration', {
             sessionId: sessionId,
             verificationCode: verificationCode
+        });
+    }
+    catch(e)
+    {
+        result = e;
+    }
+    console.log(result);
+    this.status = 200;
+    this.body = result;
+};
+module.exports.authenticate = function * ()
+{
+    var body = yield parse(this);
+    var username = body['username'];
+    var password = body['password'];
+    var passwordType = body['passwordType'];
+    var imei = body['imei'];
+    if (!username || !password || !passwordType || !imei)
+    {
+        this.status = 400;
+        return;
+    }
+
+    try
+    {
+        var result = yield rb.query('authenticate', {
+            username: username,
+            password: password,
+            passwordType: passwordType,
+            imei: imei,
+            uniqueDeviceId: 'driveinn_app_' + username,
+            timeZone: '+3',
+            appVersion: '0.1',
+            osType: 'iOS',
+            osVersion: '9.2',
+            deviceModel: 'driveinn'
+        });
+    }
+    catch(e)
+    {
+        result = e;
+    }
+    console.log(result);
+    this.status = 200;
+    this.body = result;
+};
+module.exports.logout = function * ()
+{
+    var body = yield parse(this);
+    var sessionId = body['sessionId'];
+    if (!sessionId)
+    {
+        this.status = 400;
+        return;
+    }
+
+    try
+    {
+        var result = yield rb.query('logout', {
+            sessionId: sessionId
+        });
+    }
+    catch(e)
+    {
+        result = e;
+    }
+    console.log(result);
+    this.status = 200;
+    this.body = result;
+};
+module.exports.changePassword = function * ()
+{
+    var body = yield parse(this);
+    var sessionId = body['sessionId'];
+    var passwordType = body['passwordType'];
+    var password = body['password'] || undefined;
+    var newPasswordType = body['newPasswordType'];
+    var newPassword = body['newPassword'];
+    if (!sessionId || !passwordType || !newPasswordType || !newPassword)
+    {
+        this.status = 400;
+        return;
+    }
+
+    try
+    {
+        var result = yield rb.query('changePassword', {
+            sessionId: sessionId,
+            passwordType: passwordType,
+            password: password,
+            newPasswordType: newPasswordType,
+            newPassword: newPassword,
+            isMobile: true
         });
     }
     catch(e)
