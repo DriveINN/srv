@@ -15,7 +15,13 @@ module.exports = function(sequelize, DataTypes) {
         model: {
             type: DataTypes.STRING
         },
+        label: {
+            type: DataTypes.STRING
+        },
         year: {
+            type: DataTypes.INTEGER
+        },
+        ammount: {
             type: DataTypes.INTEGER
         },
         fuel: {
