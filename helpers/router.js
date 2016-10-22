@@ -34,6 +34,8 @@ module.exports.createRoutes = function (app, mode) {
             bindRoute(route, r);
         });
         app.use(route.routes());
+        app.use(router.allowedMethods());
+
     });
 };
 
