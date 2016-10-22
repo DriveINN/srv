@@ -14,6 +14,18 @@ module.exports = {
                 type: 'get',
                 postfix: '/token/check',
                 method: controllers.token.checkToken
+            }, {
+                type: 'post',
+                postfix: '/users/register',
+                method: controllers.users.register
+            }, {
+                type: 'post',
+                postfix: '/users/check',
+                method: controllers.users.check
+            }, {
+                type: 'post',
+                postfix: '/users/register_complete',
+                method: controllers.users.registerComplete
             }
         ]
     },
