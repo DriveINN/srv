@@ -7,5 +7,9 @@
         "require": "../data/cars.json",
         "name": "cars",
         "sync": false
+    }, {
+        "require": "../data/stations.json",
+        "name": "stations",
+        "sync": false
     }
 ]
