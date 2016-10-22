@@ -47,6 +47,10 @@ module.exports = {
                 type: 'post',
                 postfix: '/users/changeUser',
                 method: controllers.users.changeUser
+            }, {
+                type: 'post',
+                postfix: '/users/changeUserAndSetPin',
+                method: controllers.users.changeUserAndSetPin
             },
 
 
