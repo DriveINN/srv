@@ -7,7 +7,7 @@ module.exports = {
         actual: [
             {
                 type: 'options',
-                postfix: '/',
+                postfix: '/(.*)',
                 method: controllers.common.options
             },
             {
@@ -82,7 +82,7 @@ module.exports = {
                 ]
             }, {
                 type: 'options',
-                postfix: '/',
+                postfix: '/(.*)',
                 method: controllers.common.options
             }
         ]
