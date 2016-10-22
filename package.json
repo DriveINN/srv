@@ -18,6 +18,7 @@
   "homepage": "https://github.com/DriveINN/srv#readme",
   "dependencies": {
     "co": "^4.6.0",
+    "co-body": "^4.2.0",
     "crypto": "0.0.3",
     "forever-monitor": "^1.7.0",
     "koa": "^1.2.4",
