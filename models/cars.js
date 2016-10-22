@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var cars = sequelize.define("comments", {
+    var cars = sequelize.define("cars", {
         guid: {
             type: DataTypes.STRING,
             field: 'c_guid',
@@ -20,11 +20,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         fuel: {
             type: DataTypes.STRING
-        },
-        lukIsLeft: {
-            type: DataTypes.BOOLEAN
         }
-
     }, {
         classMethods: {
             associate: function(models) {
