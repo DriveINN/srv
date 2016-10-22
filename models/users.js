@@ -18,24 +18,29 @@ module.exports = function(sequelize, DataTypes) {
         groups: DataTypes.ARRAY(DataTypes.STRING),
         pwdhash: DataTypes.STRING(255),
         pwdsalt: DataTypes.STRING(255),
-        SMS: DataTypes.JSON,
         f92: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: 0
         },
         f95: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: 0
         },
         f95U: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: 0
         },
         f98: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: 0
         },
         fd: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: 0
         },
         bonus: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: 0
         }
     }, {
         instanceMethods: {
