@@ -11,6 +11,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             unique: true
         },
+        email: DataTypes.STRING(255),
+        firstName: DataTypes.STRING(255),
+        lastName: DataTypes.STRING(255),
+        avatar: DataTypes.TEXT,
         groups: DataTypes.ARRAY(DataTypes.STRING),
         pwdhash: DataTypes.STRING(255),
         pwdsalt: DataTypes.STRING(255),
