@@ -7,3 +7,7 @@ module.exports.generateGuid = function () {
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
         s4() + '-' + s4() + s4() + s4();
 };
+
+module.exports.options = function () {
+    this.set('Access-Control-Allow-Origin',  '*');
+};

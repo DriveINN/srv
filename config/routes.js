@@ -6,6 +6,11 @@ module.exports = {
         v01: [],
         actual: [
             {
+                type: 'options',
+                postfix: '/',
+                method: controllers.common.options
+            },
+            {
                 type: 'put',
                 postfix: '/token',
                 method: controllers.token.getToken,
@@ -75,6 +80,10 @@ module.exports = {
                 accessGroups: [
                     'admin', 'confirmed'
                 ]
+            }, {
+                type: 'options',
+                postfix: '/',
+                method: controllers.common.options
             }
         ]
     }
