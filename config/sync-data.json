@@ -2,10 +2,10 @@
     {
         "require": "../data/users.json",
         "name": "users",
-        "sync": true
+        "sync": false
     }, {
         "require": "../data/cars.json",
         "name": "cars",
-        "sync": true
+        "sync": false
     }
 ]
