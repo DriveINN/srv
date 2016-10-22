@@ -43,6 +43,10 @@ module.exports = {
                 type: 'post',
                 postfix: '/users/changePassword',
                 method: controllers.users.changePassword
+            }, {
+                type: 'post',
+                postfix: '/users/changeUser',
+                method: controllers.users.changeUser
             },
 
 

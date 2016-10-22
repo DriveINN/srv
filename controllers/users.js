@@ -258,3 +258,33 @@ module.exports.changePassword = function * ()
     this.status = 200;
     this.body = result;
 };
+module.exports.changeUser = function * ()
+{
+    var body = yield parse(this);
+    var sessionId = body['sessionId'];
+    var email = body['email'];
+    var firstName = body['firstName'];
+    var lastName = body['lastName'];
+    if (!sessionId || !email || !firstName || !lastName)
+    {
+        this.status = 400;
+        return;
+    }
+
+    try
+    {
+        var result = yield rb.query('changeUser', {
+            sessionId: sessionId,
+            email: email,
+            firstName: firstName,
+            lastName: lastName
+        });
+    }
+    catch(e)
+    {
+        result = e;
+    }
+    console.log(result);
+    this.status = 200;
+    this.body = result;
+};
