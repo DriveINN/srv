@@ -7,7 +7,8 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true
         },
         longitude: DataTypes.STRING(10),
-        latitude: DataTypes.STRING(10), name: DataTypes.STRING(255)
+        latitude: DataTypes.STRING(10),
+        name: DataTypes.STRING(255)
     }, {
         classMethods: {
             associate: function (models) {
@@ -15,7 +16,10 @@ module.exports = function(sequelize, DataTypes) {
                     foreignKey: 'sguid',
                     as: 'stations'
                 });
-
+                stations.hasMany(models.goods, {
+                    foreignKey: 'sguid',
+                    as: 'stations'
+                });
             }
         }
     });
