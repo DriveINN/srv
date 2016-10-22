@@ -2,6 +2,7 @@ var jwt = require('koa-jwt'),
     parse = require('co-body'),
     models = require("../models"),
     common = require("../controllers/common"),
+    cfg = require("../config/config"),
     rb = require('../rb');
 
 function * getUserFromHeader (query, includeUserData) {
@@ -156,6 +157,18 @@ module.exports.authenticate = function * ()
             osVersion: '9.2',
             deviceModel: 'driveinn'
         });
+        if (result.errorCode === 0)
+        {
+            result.token = jwt.sign(
+                {
+                    user: username
+                },
+                cfg.token.secret,
+                {
+                    expiresIn: cfg.token.expires
+                }
+            );
+        }
     }
     catch(e)
     {
