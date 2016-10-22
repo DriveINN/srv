@@ -9,5 +9,7 @@ module.exports.generateGuid = function () {
 };
 
 module.exports.options = function * () {
-    this.set('Access-Control-Allow-Origin',  '*');
+    this.set('Access-Control-Allow-Origin', '*');
+    this.set('Access-Control-Request-Method', 'PUT, POST, GET, OPTIONS');
+    this.set('Access-Control-Allow-Headers', 'Authorization');
 };
