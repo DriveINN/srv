@@ -135,7 +135,7 @@ module.exports.registerComplete = function * ()
             osVersion: '9.2',
             deviceModel: 'driveinn'
         });
-        result = yield rb.query('changePassword', {
+        yield rb.query('changePassword', {
             sessionId: result.sessionId,
             passwordType: 'PIN',
             password: undefined,
@@ -145,6 +145,16 @@ module.exports.registerComplete = function * ()
         });
         result = {
             errorCode: 0,
+            sessionId: result.sessionId,
+            userId: result.userId,
+            token: jwt.sign(
+                {
+                    user: phone
+                },
+                cfg.token.secret,
+                {
+                    expiresIn: cfg.token.expires
+                })
         }
     }
     catch(e)
@@ -155,6 +165,7 @@ module.exports.registerComplete = function * ()
     this.status = 200;
     this.body = result;
 };
+
 module.exports.authenticate = function * ()
 {
     var body = yield parse(this);
