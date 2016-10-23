@@ -10,7 +10,8 @@ module.exports.listTR4User = function * () {
         transactions = yield models.transactions.findAll({
             where: {
                 uguid: user.guid
-            }
+            },
+            order: [['date', 'DESC']]
         });
     this.body = transactions;
 };
