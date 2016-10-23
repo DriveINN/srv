@@ -51,7 +51,8 @@ module.exports.make = function * () {
         }
     });
     var totalCost = goods.reduce(function(totalCost, good){
-        return totalCost + good.price * goodsJson.find(g => g.guid == good.guid).ammount;
+        var oneCost = good && card !== 'creditcard' ? 1 : good.price;
+        return totalCost + oneCost * goodsJson.find(g => g.guid == good.guid).ammount;
     }, 0);
     if (card !== 'creditcard' && (goods.length !== 1 || !(goods[0].name === card || card === 'bonus')))
     {
