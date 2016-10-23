@@ -121,8 +121,15 @@ module.exports = {
                     'admin', 'confirmed'
                 ]
             }, {
+                type: 'post',
+                postfix: '/transactions/make',
+                method: controllers.transactions.make,
+                accessGroups: [
+                    'admin', 'confirmed'
+                ]
+            }, {
                 type: 'get',
-                postfix: '/stations/:id/fuel',
+                postfix: '//:id/fuel',
                 method: controllers.stations.getStationFuel,
                 accessGroups: [
                     'admin', 'confirmed'
