@@ -29,6 +29,7 @@ module.exports.make = function * () {
     if (!station || ['f92', 'f95', 'f95U', 'f98', 'fd', 'bonus', 'creditcard'].indexOf(card) === -1)
     {
         this.status = 400;
+        this.body = 'invalid card or station';
         return;
     }
 
@@ -39,6 +40,7 @@ module.exports.make = function * () {
     catch(e)
     {
         console.log(body['goods'], e);
+        this.body = 'invalid goods';
         this.status = 400;
         return;
     }

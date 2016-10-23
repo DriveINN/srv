@@ -2,7 +2,7 @@
   "guid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae",
   "date": "2010-01-01",
   "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
-  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae",
+  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae1",
   "card": "f95",
   "goods": [{
     "ammount": "35 литоров",
@@ -13,7 +13,7 @@
   "guid": "72d9bf12-f214-1f51-0fee-f4d98f9f74ae",
   "date": "2010-01-01",
   "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
-  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae",
+  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae1",
   "card": "creditcard",
   "goods": [{
     "ammount": "30 литорв",
@@ -28,10 +28,10 @@
   "guid": "72d9bf12-f214-1f51-0fee-f4d98f9f75ae",
   "date": "2010-01-01",
   "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
-  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae",
+  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae1",
   "card": "creditcard",
   "goods": [{
-    "ammount": "25 литорв",
+    "ammount": "25 лит.",
     "description": "АИ-95"
   }],
   "total": -800,
@@ -40,10 +40,10 @@
   "guid": "72d9bf12-f214-1f51-0fee-f4d98f9f77ae",
   "date": "2010-01-01",
   "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
-  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae",
+  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae1",
   "card": "f95",
   "goods": [{
-    "ammount": "600 литоров",
+    "ammount": "600 лит.",
     "description": "АИ-95"
   }],
   "total": 600
@@ -51,10 +51,10 @@
   "guid": "72d9bf12-f214-1f51-0fee-f4d98f9f79ae",
   "date": "2010-01-01",
   "sguid": "72d9cf12-f314-1a51-0fee-f4d98f9f73ae",
-  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae",
+  "uguid": "72d9bf12-f214-1f51-0fee-f4d98f9f73ae1",
   "card": "creditcard",
   "goods": [{
-    "ammount": "600 литоров",
+    "ammount": "600 лит.",
     "description": "АИ-95"
   }],
   "total": -18000,
